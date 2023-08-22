@@ -1,11 +1,11 @@
 import React from "react";
-
+import { Button } from "@nextui-org/react";
 function TransactionList({ transactionHistory }) {
   return (
-    <div className="w-full">
-      <div className="flex justify-between">
+    <div className="w-full h-80">
+      <div className="flex justify-between items-center">
         <h2 className="text-2xl">Transactions</h2>
-        <button>View More</button>
+        <Button className="bg-transparent border-1 h-5/6">View More</Button>
       </div>
       <div className="w-full">
         {transactionHistory.map((transaction) => (
