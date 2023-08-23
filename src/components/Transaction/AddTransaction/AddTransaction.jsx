@@ -26,7 +26,6 @@ function AddTransaction({
           {(onClose) => (
             <>
               <ModalBody>
-                <div>
                   <Input
                     type="text"
                     label="Name"
@@ -48,15 +47,6 @@ function AddTransaction({
                       </div>
                     }
                   />
-                  <div className="flex flex-col my-2">
-                    <label className="text-sm">Category</label>
-                    <select className="w-full rounded-xl p-2 bg-[#3f3f466c]">
-                      <option className="bg-[#3f3f465a]">Shopping</option>
-                      <option className="bg-[#3f3f465a]">Food</option>
-                      <option className="bg-[#3f3f465a]">Other</option>
-                    </select>
-                  </div>
-                </div>
               </ModalBody>
               <ModalFooter>
                 <Button

@@ -1,6 +1,6 @@
 import React from "react";
 import AddTransaction from "../Transaction/AddTransaction/AddTransaction";
-
+import { Link } from 'react-router-dom'
 export default function Footer({
   transactionName,
   transactionAmount,
@@ -11,7 +11,7 @@ export default function Footer({
 }) {
   return (
     <footer className="w-full flex justify-around items-center h-12">
-      <p>Home</p>
+      <Link to='/'>Home</Link>
       <AddTransaction
         transactionName={transactionName}
         transactionAmount={transactionAmount}
@@ -20,7 +20,7 @@ export default function Footer({
         increaseBalance={increaseBalance}
         decreaseBalance={decreaseBalance}
       />
-      <p>Profile</p>
+      <Link to='/profile'>Profile</Link>
     </footer>
   );
 }

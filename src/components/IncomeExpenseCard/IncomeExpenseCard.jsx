@@ -1,6 +1,6 @@
 import React from "react";
 import { CircularProgress } from "@nextui-org/react";
-function IncomeExpenseCard({income, expense}) {
+function IncomeExpenseCard({ income, expense }) {
   return (
     <div className="flex w-full justify-between h-1/6">
       <div className="h-full w-40 flex bg-[#3E3E3E] rounded-2xl justify-around items-center text-black">
@@ -21,11 +21,15 @@ function IncomeExpenseCard({income, expense}) {
         </div>
       </div>
 
-      <div className="h-full w-40 flex bg-[#A2F263] rounded-2xl justify-around items-center text-black">
-              <div className="flex justify-center">
-                <img className="w-1/2" src="https://cdn-icons-png.flaticon.com/256/25/25231.png" alt="github logo"/>
-              </div>
-            </div>
+      <div className="h-full w-40 flex bg-[#A2F263] rounded-2xl items-center max-sm:hidden">
+        <div className="flex p-4 justify-center">
+          <img
+            className="w-1/2"
+            src="https://cdn-icons-png.flaticon.com/256/25/25231.png"
+            alt="github logo"
+          />
+        </div>
+      </div>
 
       <div className="h-full w-40 flex bg-[#3E3E3E] rounded-2xl justify-around items-center text-black">
         <div>

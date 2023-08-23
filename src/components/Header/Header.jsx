@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { NotificationIcon } from "../NotificationIcon/NotificationIcon";
+import { NotificationIcon } from "./NotificationIcon/NotificationIcon";
 import {
   Avatar,
   Badge,
