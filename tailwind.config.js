@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        'green-electric': '#A2F263',
+      }
     },
   },
   darkMode: "class",

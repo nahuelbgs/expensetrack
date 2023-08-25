@@ -13,31 +13,35 @@ import {
 } from "@nextui-org/react";
 
 function Header() {
-  let nameLocalStorage = localStorage.getItem('name');
-  const [name, setName] = useState(nameLocalStorage == null ? 'Enter your name' : nameLocalStorage);
-  const [input, setInput] = useState('')
+  let nameLocalStorage = localStorage.getItem("name");
+  const [name, setName] = useState(
+    nameLocalStorage == null ? "Enter your name" : nameLocalStorage
+  );
+  const [input, setInput] = useState("");
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const handleInput = e =>{
-    setInput(e.target.value)
-  }
-  const handleName = () =>{
-    if(input.length === 0){
-      setName('Enter you name')
+  const handleInput = (e) => {
+    setInput(e.target.value);
+  };
+  const handleName = () => {
+    if (input.length === 0) {
+      setName("Enter you name");
+    } else {
+      setName(input);
     }
-    else{ setName(input) }
     localStorage.setItem("name", input);
-    setInput('')
-  }
+    setInput("");
+  };
 
   return (
     <div className="w-full flex">
-      <div className="w-2/4 flex gap-4 items-center">
+      <div className="w-2/4 flex items-center">
         <Avatar
-          src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+          showFallback
+          src="https://images.unsplash.com/broken"
           size="md"
         />
-        <Button className="bg-transparent text-[#A2F263]" onPress={onOpen}>
+        <Button className="bg-transparent text-green-electric" onPress={onOpen}>
           {name}
           <span className="text-[#6C6C6C]">&#62;</span>
         </Button>
@@ -56,7 +60,11 @@ function Header() {
                   />
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="success" onPress={onClose} onClick={handleName}>
+                  <Button
+                    color="success"
+                    onPress={onClose}
+                    onClick={handleName}
+                  >
                     Confirm
                   </Button>
                 </ModalFooter>
