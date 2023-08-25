@@ -41,11 +41,11 @@ function Header() {
           src="https://images.unsplash.com/broken"
           size="md"
         />
-        <Button className="bg-transparent text-green-electric" onPress={onOpen}>
+        <Button className="bg-transparent text-green-electric" onClick={onOpen}>
           {name}
           <span className="text-[#6C6C6C]">&#62;</span>
         </Button>
-        <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="absolute">
           <ModalContent>
             {(onClose) => (
               <>
