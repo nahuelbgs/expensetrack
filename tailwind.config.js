@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        '90': '90vh',
+      },
       colors:{
         'green-electric': '#A2F263',
       }

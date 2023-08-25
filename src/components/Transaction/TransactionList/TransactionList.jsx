@@ -34,7 +34,7 @@ function TransactionList({ transactionHistory, handleDelete }) {
                       transactionHistory.map((transaction) => (
                         <Dropdown key={transaction.id}>
                           <DropdownTrigger>
-                            <div className="flex justify-around mb-1 bg-[#3E3E3E] px-2 rounded-2xl">
+                            <div className="flex justify-around mb-1 bg-[#3E3E3E] px-2 rounded-2xl cursor-pointer">
                               <div className="mb-2 mt-2 w-2/4 overflow-hidden">
                                 <p className="font-semibold text-lg text-white">
                                   {transaction.name}
@@ -85,7 +85,7 @@ function TransactionList({ transactionHistory, handleDelete }) {
           transactionHistory.slice(0, 4).map((transaction) => (
             <Dropdown key={transaction.id}>
               <DropdownTrigger>
-                <div className="flex justify-around mb-1 bg-[#3E3E3E] px-2 rounded-2xl">
+                <div className="flex justify-around mb-1 bg-[#3E3E3E] px-2 rounded-2xl cursor-pointer">
                   <div className="mb-2 mt-2 w-2/4 overflow-hidden">
                     <p className="font-semibold text-lg text-white">
                       {transaction.name}

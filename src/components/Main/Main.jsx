@@ -112,22 +112,24 @@ function Main() {
   };
 
   return (
-    <div className="m-auto max-w-2xl h-screen flex flex-col items-center justify-between px-4 py-1">
-      <Header />
-      <TotalBalance total={total} />
-      <IncomeExpenseCard income={income} expense={expense} />
-      <TransactionList
-        transactionHistory={transactionHistory}
-        handleDelete={handleDelete}
-      />
-      <AddTransaction
-        transactionName={transactionName}
-        transactionAmount={transactionAmount}
-        handleTransactionName={handleTransactionName}
-        handleTransactionAmount={handleTransactionAmount}
-        increaseBalance={increaseBalance}
-        decreaseBalance={decreaseBalance}
-      />
+    <div className="h-screen flex w-screen justify-center align-center">
+      <div className="m-auto w-screen h-screen flex flex-col items-center justify-between px-4 py-1 backdrop-blur-lg bg-[#111928bf] border-1 border-[#ffffff20] saturate-150 lg:rounded-xl lg:w-1/2 lg:h-90">
+        <Header />
+        <TotalBalance total={total} />
+        <IncomeExpenseCard income={income} expense={expense} />
+        <TransactionList
+          transactionHistory={transactionHistory}
+          handleDelete={handleDelete}
+        />
+        <AddTransaction
+          transactionName={transactionName}
+          transactionAmount={transactionAmount}
+          handleTransactionName={handleTransactionName}
+          handleTransactionAmount={handleTransactionAmount}
+          increaseBalance={increaseBalance}
+          decreaseBalance={decreaseBalance}
+        />
+      </div>
     </div>
   );
 }
