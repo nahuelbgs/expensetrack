@@ -29,30 +29,43 @@ function TransactionList({ transactionHistory, handleDelete }) {
             {
               <>
                 <ModalBody>
-                  <div className="overflow-scroll h-screen py-5 px-2">
+                  <div className="py-2 px-2">
                     {transactionHistory.length > 0 ? (
                       transactionHistory.map((transaction) => (
-                        <div
-                          className="flex justify-around mb-1 bg-[#3E3E3E] rounded-2xl"
-                          key={transaction.id}
-                        >
-                          <div className="mb-2 mt-2">
-                            <p className="font-semibold text-lg text-white">
-                              {transaction.name}
-                            </p>
-                            <p className="text-sm text-[#6C6C6C]">
-                              {transaction.date}
-                            </p>
-                          </div>
-                          <div className="flex items-center">
-                            <p className="font-semibold text-lg text-white">
-                              <span>
-                                {transaction.type === "income" ? "+" : "-"}
-                              </span>
-                              ${transaction.amount}
-                            </p>
-                          </div>
-                        </div>
+                        <Dropdown key={transaction.id}>
+                          <DropdownTrigger>
+                            <div className="flex justify-around mb-1 bg-[#3E3E3E] px-2 rounded-2xl">
+                              <div className="mb-2 mt-2 w-2/4 overflow-hidden">
+                                <p className="font-semibold text-lg text-white">
+                                  {transaction.name}
+                                </p>
+                                <p className="text-sm text-[#6C6C6C]">
+                                  {transaction.date}
+                                </p>
+                              </div>
+                              <div className="flex items-center w-2/4 justify-end overflow-hidden">
+                                <p className="font-semibold text-lg text-white">
+                                  <span>
+                                    {transaction.type === "income" ? "+" : "-"}
+                                  </span>
+                                  ${transaction.amount}
+                                </p>
+                              </div>
+                            </div>
+                          </DropdownTrigger>
+                          <DropdownMenu aria-label="Static Actions">
+                            <DropdownItem
+                              key="delete"
+                              className="text-danger"
+                              color="danger"
+                              onClick={() =>
+                                handleDelete(transaction, transactionHistory)
+                              }
+                            >
+                              Delete file
+                            </DropdownItem>
+                          </DropdownMenu>
+                        </Dropdown>
                       ))
                     ) : (
                       <div className="text-center">
@@ -72,14 +85,14 @@ function TransactionList({ transactionHistory, handleDelete }) {
           transactionHistory.slice(0, 4).map((transaction) => (
             <Dropdown key={transaction.id}>
               <DropdownTrigger>
-                <div className="flex justify-around mb-1 bg-[#3E3E3E] rounded-2xl">
-                  <div className="mb-2 mt-2">
+                <div className="flex justify-around mb-1 bg-[#3E3E3E] px-2 rounded-2xl">
+                  <div className="mb-2 mt-2 w-2/4 overflow-hidden">
                     <p className="font-semibold text-lg text-white">
                       {transaction.name}
                     </p>
                     <p className="text-sm text-[#6C6C6C]">{transaction.date}</p>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center ml-2 w-2/4 justify-end overflow-hidden">
                     <p className="font-semibold text-lg text-white">
                       <span>{transaction.type === "income" ? "+" : "-"}</span>$
                       {transaction.amount}
@@ -88,7 +101,6 @@ function TransactionList({ transactionHistory, handleDelete }) {
                 </div>
               </DropdownTrigger>
               <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="edit">Edit file</DropdownItem>
                 <DropdownItem
                   key="delete"
                   className="text-danger"
@@ -101,8 +113,7 @@ function TransactionList({ transactionHistory, handleDelete }) {
             </Dropdown>
           ))
         ) : (
-          <>
-          </>
+          <></>
         )}
       </div>
     </div>

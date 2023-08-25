@@ -22,7 +22,10 @@ function Header() {
     setInput(e.target.value)
   }
   const handleName = () =>{
-    setName(input)
+    if(input.length === 0){
+      setName('Enter you name')
+    }
+    else{ setName(input) }
     localStorage.setItem("name", input);
     setInput('')
   }

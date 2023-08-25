@@ -20,7 +20,7 @@ function AddTransaction({
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <>
-      <Button onPress={onOpen}>Add Transaction</Button>
+      <Button className="w-full" onPress={onOpen}>Add Transaction</Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
