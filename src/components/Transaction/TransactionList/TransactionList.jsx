@@ -14,7 +14,7 @@ import {
 function TransactionList({ transactionHistory, handleDelete }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
-    <div className="w-full h-80 flex flex-col gap-2">
+    <div className="w-full h-60 flex flex-col gap-1">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl">Transactions</h2>
         <Button onPress={onOpen} className="bg-transparent border-1 h-5/6">
@@ -82,7 +82,7 @@ function TransactionList({ transactionHistory, handleDelete }) {
 
       <div className="w-full">
         {transactionHistory.length > 0 ? (
-          transactionHistory.slice(0, 4).map((transaction) => (
+          transactionHistory.slice(0, 3).map((transaction) => (
             <Dropdown key={transaction.id}>
               <DropdownTrigger>
                 <div className="flex justify-around mb-1 bg-[#3E3E3E] px-2 rounded-2xl cursor-pointer">
