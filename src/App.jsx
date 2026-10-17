@@ -1,16 +1,18 @@
-import { React } from "react";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Main from "./components/Main/Main";
+import { I18nProvider } from "./i18n/I18n";
 import "./App.css";
 
 function App() {
   return (
-      <NextUIProvider>
-        <NextThemesProvider attribute="class" defaultTheme="dark">
+    <HeroUIProvider>
+      <NextThemesProvider attribute="class" defaultTheme="dark">
+        <I18nProvider>
           <Main />
-        </NextThemesProvider>
-      </NextUIProvider>
+        </I18nProvider>
+      </NextThemesProvider>
+    </HeroUIProvider>
   );
 }
 
